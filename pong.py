@@ -54,8 +54,8 @@ ball.shape("circle")
 ball.color("white")
 ball.penup()
 ball.goto(0,0)
-ball.dx = 2
-ball.dy = -2
+ball.dx = 4
+ball.dy = -4
 
 # Pen
 pen = turtle.Turtle()
@@ -69,22 +69,22 @@ pen.write("Player A : 0     Player B : 0",align="center", font=("Courier", 24, "
 # Function
 def paddle_a_up():
     y = paddle_a.ycor()
-    y +=20
+    y +=40
     paddle_a.sety(y)
 
 def paddle_a_down():
     y = paddle_a.ycor()
-    y -=20
+    y -=40
     paddle_a.sety(y)
 
 def paddle_b_up():
     y = paddle_b.ycor()
-    y +=20
+    y +=40
     paddle_b.sety(y)
 
 def paddle_b_down():
     y = paddle_b.ycor()
-    y -=20
+    y -=40
     paddle_b.sety(y)
 
 # Keyboard binding
@@ -136,13 +136,13 @@ while True:
 
     # Paddle and Ball collisions
         #Collision with Paddle B
-    if (ball.xcor() > 340 and ball.xcor() < 350 ) and (ball.ycor() < paddle_b.ycor() + 40 and ball.ycor() > paddle_b.ycor() - 40):
+    if (ball.xcor() > 340 and ball.xcor() < 350 ) and (ball.ycor() < paddle_b.ycor() + 50 and ball.ycor() > paddle_b.ycor() - 50):
         ball.setx(340)
         ball.dx *= -1
         os.system("afplay bounce.wav&")
 
          #Collision with Paddle A
-    if (ball.xcor() < -340 and ball.xcor() > -350 ) and (ball.ycor() < paddle_a.ycor() + 40 and ball.ycor() > paddle_a.ycor() - 40):
+    if (ball.xcor() < -340 and ball.xcor() > -350 ) and (ball.ycor() < paddle_a.ycor() + 50 and ball.ycor() > paddle_a.ycor() - 50):
         ball.setx(-340)
         ball.dx *= -1
         os.system("afplay bounce.wav&")
